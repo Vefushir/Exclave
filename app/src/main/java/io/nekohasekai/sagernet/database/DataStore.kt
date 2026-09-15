@@ -187,8 +187,8 @@ object DataStore : OnPreferenceDataStoreChangeListener {
     var useIECUnit by configurationStore.boolean(Key.USE_IEC_UNIT)
     var queryAllPackagesAlternativeMethod by configurationStore.boolean(Key.QUERY_ALL_PACKAGES_ALTERNATIVE_METHOD)
 
-    var enableFragment by configurationStore.boolean(Key.ENABLE_FRAGMENT)
-    var enableFragmentForDirect by configurationStore.boolean(Key.ENABLE_FRAGMENT_FOR_DIRECT)
+    var enableFragment by configurationStore.boolean(Key.ENABLE_FRAGMENT) { true }
+    var enableFragmentForDirect by configurationStore.boolean(Key.ENABLE_FRAGMENT_FOR_DIRECT) { true }
     var fragmentMethod by configurationStore.stringToInt(Key.FRAGMENT_METHOD)
     var realityDisableX25519Mlkem768 by configurationStore.boolean(Key.REALITY_DISABLE_X25519MLKEM768)
     var hysteria2OmitMaxDatagramFrameSize by configurationStore.boolean(Key.HYSTERIA2_OMIT_MAX_DATAGRAM_FRAME_SIZE)
@@ -357,7 +357,7 @@ object DataStore : OnPreferenceDataStoreChangeListener {
     var serverHysteria2ObfsType by profileCacheStore.string(Key.SERVER_HYSTERIA2_OBFS_TYPE)
     var serverHysteria2GeckoMinPacketSize by profileCacheStore.stringToInt(Key.SERVER_HYSTERIA2_GECKO_MIN_PACKET_SIZE)
     var serverHysteria2GeckoMaxPacketSize by profileCacheStore.stringToInt(Key.SERVER_HYSTERIA2_GECKO_MAX_PACKET_SIZE)
-    var serverHysteria2ChromeParrot by profileCacheStore.boolean(Key.SERVER_HYSTERIA2_CHROME_PARROT)
+    var serverHysteria2ChromeParrot by profileCacheStore.boolean(Key.SERVER_HYSTERIA2_CHROME_PARROT) { true }
 
     var serverSnellVersion by profileCacheStore.stringToInt(Key.SERVER_SNELL_VERSION)
     var serverSnellReuse by profileCacheStore.boolean(Key.SERVER_SNELL_REUSE)
