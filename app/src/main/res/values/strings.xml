@@ -641,4 +641,11 @@
 You can change them later in settings.</string>
     <string name="ru_recommended_applied">RU recommended settings applied</string>
     <string name="ru_recommended_revert">Revert to defaults</string>
+    <string name="onboarding_title">Recommended settings</string>
+    <string name="onboarding_message">For better stability in restricted networks we recommend enabling:</string>
+    <string name="onboarding_wakelock">Acquire WakeLock</string>
+    <string name="onboarding_autoconnect">Auto-connect on boot</string>
+    <string name="onboarding_ipv6">IPv6 on VPN interface</string>
+    <string name="onboarding_enable_now">Enable selected</string>
+    <string name="onboarding_skip">Skip</string>
 </resources>

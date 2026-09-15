@@ -609,4 +609,11 @@
 Позже можно изменить вручную в настройках.</string>
     <string name="ru_recommended_applied">Рекомендованные настройки для RU применены</string>
     <string name="ru_recommended_revert">Вернуть к дефолтам</string>
+    <string name="onboarding_title">Рекомендуемые настройки</string>
+    <string name="onboarding_message">Для лучшей стабильности в ограниченных сетях рекомендуем включить:</string>
+    <string name="onboarding_wakelock">Acquire WakeLock</string>
+    <string name="onboarding_autoconnect">Автоподключение при загрузке</string>
+    <string name="onboarding_ipv6">IPv6 на VPN-интерфейсе</string>
+    <string name="onboarding_enable_now">Включить выбранные</string>
+    <string name="onboarding_skip">Пропустить</string>
 </resources>

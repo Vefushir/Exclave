@@ -195,6 +195,33 @@ class MainActivity : ThemedActivity(),
             } else {
                 requestPermissions()
             }
+
+            // Onboarding (first launch)
+            if (!DataStore.onboardingShown) {
+                val items = arrayOf(
+                    getString(R.string.onboarding_wakelock),
+                    getString(R.string.onboarding_autoconnect),
+                    getString(R.string.onboarding_ipv6)
+                )
+                val checked = booleanArrayOf(true, true, true)
+
+                MaterialAlertDialogBuilder(this@MainActivity)
+                    .setTitle(R.string.onboarding_title)
+                    .setMultiChoiceItems(items, checked) { _, which, isChecked ->
+                        checked[which] = isChecked
+                    }
+                    .setPositiveButton(R.string.onboarding_enable_now) { _, _ ->
+                        if (checked[0]) DataStore.acquireWakeLock = true
+                        if (checked[1]) DataStore.persistAcrossReboot = true
+                        if (checked[2]) DataStore.enableVPNInterfaceIPv6Address = true
+                        DataStore.onboardingShown = true
+                    }
+                    .setNegativeButton(R.string.onboarding_skip) { _, _ ->
+                        DataStore.onboardingShown = true
+                    }
+                    .setCancelable(false)
+                    .show()
+            }
         }
     }
 
