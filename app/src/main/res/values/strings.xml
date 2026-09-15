@@ -626,4 +626,19 @@
     <string name="option_globally_enabled">This option has been enabled globally and the value will be omitted.</string>
     <string name="ech_query_name" translatable="false">ECHQueryName</string>
     <string name="snell_obfs_uri">Obfuscation URI</string>
+    <string name="cag_ru_recommended">Recommended for RU region</string>
+    <string name="apply_ru_recommended">Apply recommended settings</string>
+    <string name="apply_ru_recommended_sum">Enable TLS fragmentation, Cloudflare test URL, WakeLock and IPv6 route</string>
+    <string name="ru_recommended_dialog_title">Apply RU recommended settings?</string>
+    <string name="ru_recommended_dialog_message">The following will be changed:
+
+• TLS Client Hello fragmentation → ON
+• Fragmentation for direct → ON
+• Connection test URL → Cloudflare
+• WakeLock → ON
+• IPv6 route → ON
+
+You can change them later in settings.</string>
+    <string name="ru_recommended_applied">RU recommended settings applied</string>
+    <string name="ru_recommended_revert">Revert to defaults</string>
 </resources>

@@ -594,4 +594,19 @@
     <string name="option_globally_enabled">Эта опция включена глобально, поэтому значение будет игнорироваться.</string>
     <string name="chrome_parrot_summary">Имитировать QUIC Client Hello браузера Chrome</string>
     <string name="snell_obfs_uri">URI обфускации</string>
+    <string name="cag_ru_recommended">Рекомендуемые для RU региона</string>
+    <string name="apply_ru_recommended">Применить рекомендованные</string>
+    <string name="apply_ru_recommended_sum">Включить фрагментацию TLS, Cloudflare URL теста, WakeLock и маршрут IPv6</string>
+    <string name="ru_recommended_dialog_title">Применить рекомендованные настройки для RU?</string>
+    <string name="ru_recommended_dialog_message">Будут изменены следующие параметры:
+
+• Фрагментация TLS Client Hello → ВКЛ
+• Фрагментация для прямого → ВКЛ
+• URL проверки подключения → Cloudflare
+• WakeLock → ВКЛ
+• Маршрут IPv6 → ВКЛ
+
+Позже можно изменить вручную в настройках.</string>
+    <string name="ru_recommended_applied">Рекомендованные настройки для RU применены</string>
+    <string name="ru_recommended_revert">Вернуть к дефолтам</string>
 </resources>

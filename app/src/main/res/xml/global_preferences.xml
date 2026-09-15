@@ -475,4 +475,16 @@
             app:title="Experimental flags" />
     </PreferenceCategory>
 
+
+    <PreferenceCategory
+        app:title="@string/cag_ru_recommended"
+        app:initialExpandedChildrenCount="0">
+
+        <Preference
+            app:key="apply_ru_recommended"
+            app:title="@string/apply_ru_recommended"
+            app:summary="@string/apply_ru_recommended_sum"
+            app:icon="@drawable/ic_baseline_settings_24" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

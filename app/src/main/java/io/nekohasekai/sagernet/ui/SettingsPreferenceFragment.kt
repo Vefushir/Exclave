@@ -96,6 +96,25 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
         val appendHttpProxy = findPreference<SwitchPreference>(Key.APPEND_HTTP_PROXY)!!
         val httpProxyException = findPreference<EditTextPreference>(Key.HTTP_PROXY_EXCEPTION)!!
 
+        // RU recommended preset
+        findPreference<Preference>("apply_ru_recommended")?.setOnPreferenceClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.ru_recommended_dialog_title)
+                .setMessage(R.string.ru_recommended_dialog_message)
+                .setPositiveButton(android.R.string.ok) { _, _ ->
+                    DataStore.enableFragment = true
+                    DataStore.enableFragmentForDirect = true
+                    DataStore.connectionTestURL = "https://cp.cloudflare.com/generate_204"
+                    DataStore.acquireWakeLock = true
+                    DataStore.enableVPNInterfaceIPv6Address = true
+                    needReload()
+                    snackbar(R.string.ru_recommended_applied).show()
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
+            true
+        }
+
         // app settings
         findPreference<ColorPickerPreference>(Key.APP_THEME)!!.setOnPreferenceChangeListener { _, newTheme ->
             val theme = Theme.getTheme(newTheme as Int)
