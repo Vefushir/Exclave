@@ -430,34 +430,8 @@ class ConfigurationFragment @JvmOverloads constructor(
                                 import(proxies)
                             }
                         } catch (e: Exception) {
-                            profile.status = 3
-                            val msg = e.readableMessage
-                            val lower = msg.lowercase()
-                            profile.error = when {
-                                "certificate" in lower || "x509" in lower || "tls: failed to verify" in lower ||
-                                "certificate signed by unknown authority" in lower || "certificate verify failed" in lower -> {
-                                    """$msg
-
-⚠️ Похоже, проблема с сертификатом.
-Если ключ с самоподписанным сертификатом — откройте профиль (карандашик) и включите «Разрешить небезопасные соединения» (Allow Insecure).
-
-Если это Hysteria2 и у вас должен быть Gecko:
-• В настройках профиля выберите obfs = Gecko
-• Укажите min/max packet size (обычно 512/1200)
-• Если не знаете точные значения — спросите у того, кто выдал ключ."""
-                                }
-                                "hysteria" in lower || profile.type == 11 /* hysteria2 */ -> {
-                                    """$msg
-
-Если это Hysteria2 + Gecko:
-• Откройте профиль (карандашик)
-• Выберите obfs = Gecko и укажите min/max packet size
-• Если не знаете значения — спросите администратора VPN"""
-                                }
-                                else -> msg
-                            }
-                        }
-                        onMainDispatcher {
+                            Logs.w(e)
+                            onMainDispatcher {
                                 snackbar(e.readableMessage).show()
                             }
                         }
@@ -893,31 +867,7 @@ class ConfigurationFragment @JvmOverloads constructor(
                             profile.error = e.readableMessage
                         } catch (e: Exception) {
                             profile.status = 3
-                            val msg = e.readableMessage
-                            val lower = msg.lowercase()
-                            profile.error = when {
-                                "certificate" in lower || "x509" in lower || "tls: failed to verify" in lower ||
-                                "certificate signed by unknown authority" in lower || "certificate verify failed" in lower -> {
-                                    """$msg
-
-⚠️ Похоже, проблема с сертификатом.
-Если ключ с самоподписанным сертификатом — откройте профиль (карандашик) и включите «Разрешить небезопасные соединения» (Allow Insecure).
-
-Если это Hysteria2 и у вас должен быть Gecko:
-• В настройках профиля выберите obfs = Gecko
-• Укажите min/max packet size (обычно 512/1200)
-• Если не знаете точные значения — спросите у того, кто выдал ключ."""
-                                }
-                                "hysteria" in lower || profile.type == 11 /* hysteria2 */ -> {
-                                    """$msg
-
-Если это Hysteria2 + Gecko:
-• Откройте профиль (карандашик)
-• Выберите obfs = Gecko и укажите min/max packet size
-• Если не знаете значения — спросите администратора VPN"""
-                                }
-                                else -> msg
-                            }
+                            profile.error = e.readableMessage
                         }
                         onMainDispatcher {
                             finishedProfileCount++
