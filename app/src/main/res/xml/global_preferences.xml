@@ -484,7 +484,12 @@
             app:key="apply_ru_recommended"
             app:title="@string/apply_ru_recommended"
             app:summary="@string/apply_ru_recommended_sum"
-            app:icon="@drawable/ic_baseline_settings_24" />
+            app:icon="@drawable/ic_action_settings" />
+
+        <Preference
+            app:key="revert_ru_recommended"
+            app:title="@string/ru_recommended_revert"
+            app:icon="@drawable/ic_action_settings" />
 
     </PreferenceCategory>
 </PreferenceScreen>

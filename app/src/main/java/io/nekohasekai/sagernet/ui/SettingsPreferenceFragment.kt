@@ -115,6 +115,24 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
             true
         }
 
+        findPreference<Preference>("revert_ru_recommended")?.setOnPreferenceClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.ru_recommended_revert)
+                .setMessage(R.string.ru_recommended_dialog_message) // можно потом сделать отдельную строку
+                .setPositiveButton(android.R.string.ok) { _, _ ->
+                    DataStore.enableFragment = false
+                    DataStore.enableFragmentForDirect = false
+                    DataStore.connectionTestURL = CONNECTION_TEST_URL
+                    DataStore.acquireWakeLock = false
+                    DataStore.enableVPNInterfaceIPv6Address = false
+                    needReload()
+                    snackbar(R.string.ru_recommended_revert).show()
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
+            true
+        }
+
         // app settings
         findPreference<ColorPickerPreference>(Key.APP_THEME)!!.setOnPreferenceChangeListener { _, newTheme ->
             val theme = Theme.getTheme(newTheme as Int)
