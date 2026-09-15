@@ -2,6 +2,10 @@
 
 Exclave is a proxy client.
 
+> **This is a fork of [ExclaveNetwork/Exclave](https://github.com/ExclaveNetwork/Exclave)**  
+> which is itself based on [SagerNet/SagerNet](https://github.com/SagerNet/SagerNet).  
+> Licensed under GPL-3.0.
+
 <details>
 
 Features:
