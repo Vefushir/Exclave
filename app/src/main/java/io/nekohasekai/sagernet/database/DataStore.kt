@@ -257,7 +257,7 @@ object DataStore : OnPreferenceDataStoreChangeListener {
     var individual by configurationStore.string(Key.INDIVIDUAL)
     var showDirectSpeed by configurationStore.boolean(Key.SHOW_DIRECT_SPEED)
 
-    val persistAcrossReboot by configurationStore.boolean(Key.PERSIST_ACROSS_REBOOT)
+    var persistAcrossReboot by configurationStore.boolean(Key.PERSIST_ACROSS_REBOOT)
 
     var requireSocks by configurationStore.boolean(Key.REQUIRE_SOCKS) { true }
     var socksUsername by configurationStore.string(Key.SOCKS_USERNAME)
